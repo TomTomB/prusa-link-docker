@@ -1,0 +1,11 @@
+services:
+  prusalink:
+    container_name: prusalink
+    hostname: prusalink
+    image: prusalink
+    privileged: true
+    ports:
+      - 8080:8080
+    volumes:
+      - /opt/prusalink/config:/etc/prusalink
+      - /opt/prusalink/data:/home/pi
