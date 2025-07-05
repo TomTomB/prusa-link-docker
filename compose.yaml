@@ -6,8 +6,13 @@ services:
       context: .
       dockerfile: Dockerfile
     privileged: true
+    environment:
+      - PUID=568
+      - PGID=568
     ports:
       - 31050:8080
     volumes:
       - "/mnt/Fast Pool/Apps/PursaLink/Config:/etc/prusalink"
       - "/mnt/Fast Pool/Apps/PursaLink/Data:/home/pi"
+    devices:
+      - /dev/video0:/dev/video0
