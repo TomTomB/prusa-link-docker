@@ -2,7 +2,9 @@ services:
   prusalink:
     container_name: prusalink
     hostname: prusalink
-    image: prusalink
+    build:
+      context: .
+      dockerfile: Dockerfile
     privileged: true
     ports:
       - 31050:8080
