@@ -6,9 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     privileged: true
-    environment:
-      - PUID=568
-      - PGID=568
     ports:
       - 31050:8080
     volumes:
@@ -16,4 +13,4 @@ services:
       - "/mnt/Fast Pool/Apps/PursaLink/Data:/home/pi"
     devices:
       - /dev/video0:/dev/video0
-      - /dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_MK4_10589-3742441633504504-if00:/dev/ttyUSB0
+      - /dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_MK4_10589-3742441633504504-if00:/dev/ttyACM0
