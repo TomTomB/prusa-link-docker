@@ -25,14 +25,18 @@ RUN pip install --no-cache-dir \
     git+https://github.com/prusa3d/Prusa-Connect-SDK-Printer.git \
     git+https://github.com/prusa3d/Prusa-Link.git
 
-RUN useradd -m pi && echo "pi:raspberry" | chpasswd && adduser pi sudo
+# Create user 'pi' with UID and GID 568
+RUN groupadd -g 568 pi \
+    && useradd -m -u 568 -g 568 -s /bin/bash pi
 
+# Add 'pi' to additional groups
+RUN usermod -a -G dialout pi \
+    && usermod -a -G video pi
+
+# Set permissions for working directory
 RUN chown -R pi:pi /usr/src/app
 
-RUN usermod -a -G dialout pi
-
-RUN usermod -a -G video pi
-
+# Use the non-root user
 USER pi
 
 EXPOSE 8080
