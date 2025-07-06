@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     gcc \
     python3-dev \
+    screen \
     systemd \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
