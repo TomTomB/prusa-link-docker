@@ -11,5 +11,6 @@ services:
       - "/mnt/Fast Pool/Apps/PursaLink/Config:/etc/prusalink"
       - "/mnt/Fast Pool/Apps/PursaLink/Data:/home/pi"
     devices:
-      # - /dev/video0:/dev/video0
-      - /dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_MK4_10589-3742441633504504-if00:/dev/ttyACM0
+      - /dev/video0:/dev/video0
+      - /dev/ttyACM0:/dev/ttyACM0
+      #- /dev/serial/by-id/usb-Prusa_Research__prusa3d.com__Original_Prusa_MK4_10589-3742441633504504-if00:/dev/ttyACM0
